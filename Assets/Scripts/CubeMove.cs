@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class CubeMove : MonoBehaviour
 {
+
 
     // Update is called once per frame
     void Update()
@@ -15,6 +16,11 @@ public class CubeMove : MonoBehaviour
     {
         if (other.gameObject.tag == "Deletezone")
         {
+            Destroy(this.gameObject);
+        }
+        if (other.gameObject.tag == "Head")
+        {
+            GameManager.instance.addPoint();
             Destroy(this.gameObject);
         }
     }
